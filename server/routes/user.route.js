@@ -1,11 +1,7 @@
 import express from "express";
+import { verifyUser } from "../utils/verifyUser";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    message: "Login Successfully",
-  });
-});
-
+router.post("/update/:id", verifyUser, updateUserInfo);
 export default router;
